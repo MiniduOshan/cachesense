@@ -25,12 +25,16 @@
     "LICENSE"
   ],
   "scripts": {
-    "test": "node --test tests/CacheSense.test.js"
+    "test": "node --test tests/CacheSense.test.js",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
     "express": "^4.19.2"
   },
   "devDependencies": {
-    "node-cache": "^5.1.2"
+    "node-cache": "^5.1.2",
+    "vitepress": "^1.6.4"
   }
 }
