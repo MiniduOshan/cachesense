@@ -3,10 +3,10 @@
 Install CacheSense from npm:
 
 ```bash
-npm install cachesense node-cache
+npm install cachesense
 ```
 
-If you are developing locally in this repository, install the docs tooling too:
+If you are developing locally in this repository, install the project dependencies (for the docs site and local tooling):
 
 ```bash
 npm install
@@ -14,8 +14,13 @@ npm install
 
 ## Requirements
 
-- Node.js 18 or newer is recommended for the docs site and local tooling.
-- A cache implementation such as `node-cache` is required for the wrapper examples.
+- Node.js 18 or newer (required).
+
+For core usage `cachesense` has no additional runtime dependencies. If you want to follow the advanced wrapper examples that use `node-cache`, you may optionally install it:
+
+```bash
+npm install node-cache
+```
 
 ## Import
 
