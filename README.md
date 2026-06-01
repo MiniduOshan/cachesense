@@ -19,6 +19,7 @@ It tracks:
 Without changing existing cache workflows.
 
 CacheSense works as a wrapper around cache providers such as NodeCache and Redis.
+If you do not pass a cache instance, it falls back to an in-memory `Map`.
 
 ## Example Usage
 

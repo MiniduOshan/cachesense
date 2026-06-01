@@ -1,7 +1,7 @@
 const Metrics = require("./Metrics");
 
 class CacheSense {
-	constructor(cache) {
+	constructor(cache = new Map()) {
 		this.cache = cache;
 		this.metrics = new Metrics();
 	}

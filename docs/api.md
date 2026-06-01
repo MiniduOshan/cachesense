@@ -3,16 +3,17 @@
 ## `new CacheSense(cache)`
 
 Creates a new wrapper around a cache implementation.
+If no cache is provided, CacheSense uses an in-memory `Map`.
 
 ### Parameters
 
-- `cache`: Any object with `get(key)` and `set(key, value)` methods.
+- `cache` (optional): Any object with `get(key)` and `set(key, value)` methods.
 
 ### Example
 
 ```js
 const CacheSense = require("cachesense");
-const monitor = new CacheSense(cache);
+const monitor = new CacheSense();
 ```
 
 ## `monitor.get(key)`
