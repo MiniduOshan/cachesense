@@ -1,6 +1,6 @@
 {
   "name": "cachesense",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Lightweight cache analytics for Node.js",
   "main": "src/index.js",
   "keywords": [
