@@ -4,6 +4,20 @@ Current version: `1.0.2`
 
 CacheSense is a lightweight cache analytics wrapper for Node.js libraries.
 
+## Installation
+
+Install CacheSense from npm:
+
+```bash
+npm install cachesense
+```
+
+If you want to try the optional examples that use `node-cache`, install it separately:
+
+```bash
+npm install node-cache
+```
+
 ## Why CacheSense?
 
 Most cache libraries store and retrieve data, but they do not show how effectively the cache is performing.
@@ -20,28 +34,49 @@ It tracks:
 
 Without changing existing cache workflows.
 
-CacheSense works as a wrapper around cache providers such as NodeCache and Redis.
-If you do not pass a cache instance, it falls back to an in-memory `Map`.
+CacheSense can wrap cache providers such as NodeCache and Redis, but it has no required runtime dependency on them. If you do not pass a cache instance, CacheSense falls back to a built-in in-memory `Map`.
 
 ## Example Usage
 
 ```js
-const NodeCache = require("node-cache");
 const CacheSense = require("cachesense");
 
-const cache = new NodeCache();
-const monitor = new CacheSense(cache);
+// Create cache instance
+const cache = new CacheSense();
 
-monitor.set("user", {
-	id: 1,
-	name: "John"
-});
+// Set values
+cache.set("user:1", { id: 1, name: "John" });
 
-monitor.get("user");
-monitor.get("user");
-monitor.get("unknown");
+// Get values
+const user = cache.get("user:1");
+const missing = cache.get("user:2");
 
-console.log(monitor.stats());
+console.log(user);
+console.log(missing);
+console.log(cache.stats());
+```
+
+### Using CacheSense as a standalone cache
+
+You can use `CacheSense` directly as an in-memory cache without passing an external cache implementation:
+
+```js
+const CacheSense = require("cachesense");
+
+// Create cache instance
+const cache = new CacheSense();
+
+// Set values
+cache.set("user:1", { id: 1, name: "John" });
+
+// Get values
+const user = cache.get("user:1");
+const missing = cache.get("user:2");
+
+// Output
+console.log(user);
+console.log(missing);
+console.log(cache.stats());
 ```
 
 ## v1 Goals

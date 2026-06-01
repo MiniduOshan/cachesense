@@ -7,10 +7,9 @@ description: Lightweight cache analytics for Node.js
 
 Current version: `1.0.2`
 
-CacheSense adds lightweight analytics on top of cache libraries such as `node-cache`.
+CacheSense provides lightweight cache analytics for Node.js. It can wrap existing cache libraries or be used standalone.
 
-It helps you measure how your cache is performing without changing the workflow you already use.
-If you skip the constructor argument, CacheSense uses an in-memory `Map` by default.
+It helps you measure how your cache is performing without changing your workflow. If you skip the constructor argument, CacheSense uses an in-memory `Map` by default.
 
 ## What it tracks
 
@@ -26,20 +25,27 @@ Most cache libraries store and retrieve data. CacheSense shows how well the cach
 
 ## Example
 
+### Using CacheSense as a standalone cache
+
+You can use `CacheSense` directly as an in-memory cache without any external cache implementation:
+
 ```js
-const NodeCache = require("node-cache");
 const CacheSense = require("cachesense");
 
-const cache = new NodeCache();
-const monitor = new CacheSense(cache);
+// Create cache instance
+const cache = new CacheSense();
 
-monitor.set("user", { id: 1, name: "John" });
+// Set values
+cache.set("user:1", { id: 1, name: "John" });
 
-monitor.get("user");
-monitor.get("user");
-monitor.get("unknown");
+// Get values
+const user = cache.get("user:1");
+const missing = cache.get("user:2");
 
-console.log(monitor.stats());
+// Output
+console.log(user);
+console.log(missing);
+console.log(cache.stats());
 ```
 
 ## Next steps
