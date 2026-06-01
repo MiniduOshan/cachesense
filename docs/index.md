@@ -5,7 +5,7 @@ description: Lightweight cache analytics for Node.js
 
 # CacheSense
 
-Current version: `1.0.2`
+Current version: `1.0.3`
 
 CacheSense provides lightweight cache analytics for Node.js. It can wrap existing cache libraries or be used standalone.
 
