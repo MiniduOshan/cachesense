@@ -2,7 +2,7 @@
   "name": "cachesense",
   "version": "1.0.0",
   "description": "Lightweight cache analytics for Node.js",
-  "main": "src/CacheSense.js",
+  "main": "src/index.js",
   "keywords": [
     "cache",
     "performance",
@@ -11,7 +11,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "test": "node -e \"console.log('No tests yet')\""
+    "test": "node --test tests/CacheSense.test.js"
   },
   "dependencies": {
     "express": "^4.19.2",
