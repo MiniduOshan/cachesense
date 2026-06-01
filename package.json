@@ -34,7 +34,6 @@
     "express": "^4.19.2"
   },
   "devDependencies": {
-    "node-cache": "^5.1.2",
     "vitepress": "^1.6.4"
   }
 }

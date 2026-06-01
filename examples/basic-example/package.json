@@ -7,6 +7,6 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "node-cache": "^5.1.2"
+    
   }
 }

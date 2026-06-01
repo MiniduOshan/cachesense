@@ -1,16 +1,14 @@
-const NodeCache = require("node-cache");
 const CacheSense = require("../../src");
 
-const cache = new NodeCache();
-const monitor = new CacheSense(cache);
+const cache = new CacheSense();
 
-monitor.set("user", {
+cache.set("user", {
   id: 1,
   name: "John"
 });
 
-monitor.get("user");
-monitor.get("user");
-monitor.get("unknown");
+cache.get("user");
+cache.get("user");
+cache.get("unknown");
 
-console.log(monitor.stats());
+console.log(cache.stats());

@@ -1,12 +1,10 @@
 const test = require("node:test");
 const assert = require("node:assert");
-const NodeCache = require("node-cache");
 const CacheSense = require("../src/CacheSense");
 
 test("CacheSense Metrics Tracking", async (t) => {
 	await t.test("should initialize with zero hits and misses", () => {
-		const rawCache = new NodeCache();
-		const cache = new CacheSense(rawCache);
+		const cache = new CacheSense();
 
 		const stats = cache.stats();
 		assert.strictEqual(stats.hits, 0);
@@ -15,8 +13,7 @@ test("CacheSense Metrics Tracking", async (t) => {
 	});
 
 	await t.test("should record hits correctly", () => {
-		const rawCache = new NodeCache();
-		const cache = new CacheSense(rawCache);
+		const cache = new CacheSense();
 
 		cache.set("key1", "value1");
 		const val = cache.get("key1");
@@ -29,8 +26,7 @@ test("CacheSense Metrics Tracking", async (t) => {
 	});
 
 	await t.test("should record misses correctly", () => {
-		const rawCache = new NodeCache();
-		const cache = new CacheSense(rawCache);
+		const cache = new CacheSense();
 
 		const val = cache.get("non-existent");
 
@@ -42,8 +38,7 @@ test("CacheSense Metrics Tracking", async (t) => {
 	});
 
 	await t.test("should calculate hit ratio correctly for mixed operations", () => {
-		const rawCache = new NodeCache();
-		const cache = new CacheSense(rawCache);
+		const cache = new CacheSense();
 
 		cache.set("key1", "value1");
 		cache.get("key1"); // hit

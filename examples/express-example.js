@@ -1,10 +1,8 @@
 const express = require("express");
-const NodeCache = require("node-cache");
 const CacheSense = require("../src/CacheSense");
 
 const app = express();
-const cache = new NodeCache();
-const monitor = new CacheSense(cache);
+const monitor = new CacheSense();
 
 app.get("/user/:id", (req, res) => {
 	const cacheKey = `user:${req.params.id}`;
