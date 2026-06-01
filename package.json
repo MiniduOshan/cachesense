@@ -10,11 +10,26 @@
     "nodejs"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MiniduOshan/cachesense.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MiniduOshan/cachesense/issues"
+  },
+  "homepage": "https://github.com/MiniduOshan/cachesense#readme",
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "test": "node --test tests/CacheSense.test.js"
   },
   "dependencies": {
-    "express": "^4.19.2",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
     "node-cache": "^5.1.2"
   }
 }
