@@ -1,5 +1,7 @@
 # CacheSense
 
+Current version: `1.0.2`
+
 CacheSense is a lightweight cache analytics wrapper for Node.js libraries.
 
 ## Why CacheSense?
