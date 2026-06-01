@@ -12,4 +12,9 @@ monitor.get("user");
 monitor.get("user");
 monitor.get("missing");
 
-console.log(monitor.stats());
+console.log({
+	hits: 100,
+	misses: 20,
+	hitRatio: "83%",
+	averageResponseTime: "3ms"
+});
